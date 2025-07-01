@@ -22,7 +22,7 @@ updateUserScore();
 async function updateUserScore(finalScore) {
   try {
     await fetch('/services/apexrest/game/score', {
-      method: 'PATCH',
+      method: 'POST',
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json'
