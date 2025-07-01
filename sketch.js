@@ -18,8 +18,22 @@ x:170,
 y:300,
 speed: 5
 };
-
-
+updateUserScore();
+async function updateUserScore(finalScore) {
+  try {
+    await fetch('/services/apexrest/game/score', {
+      method: 'PATCH',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ Score__c: finalScore })
+    });
+    console.log('Score saved to Salesforce:', finalScore);
+  } catch (error) {
+    console.error('Error saving score to Salesforce:', error);
+  }
+}
 
 function preload (){
  
@@ -143,6 +157,7 @@ for (let i = 0; i < tomatoes.length; i++) {
     //condition for end game 
     if(lives <= 0) {
        gameOver=true;
+      updateUserScore(score);
        }
     
     // Reset tomato
