@@ -29,9 +29,7 @@ async function updateUserScore(finalScore) {
     try {
     await fetch('https://023344d8-6faf-4043-a87e-35c1ccd1a9e9-00-3eg2ra5nb4m09.kirk.replit.dev/submit-score', {
       method: 'POST',
-      credentials: 'include',
       headers: {
-        'Authorization': 'Bearer 00DSv000005ei5r!AQEAQOBKzZ33eE2cxk0cU9xecRhOt3gqV7_LW71m21XHeQ3PD_RCYFz8fU1IpQpsSjm.NmpIjiSu7U_FBJnmm1q_s.LXALtw',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ Score__c: finalScore })
