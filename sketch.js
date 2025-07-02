@@ -22,7 +22,7 @@ let dog = {
   y: 300,
   speed: 5
 };
-updateUserScore();
+let updateUserScore();
 
 async function updateUserScore(finalScore) {
   try {
