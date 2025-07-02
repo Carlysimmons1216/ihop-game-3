@@ -12,6 +12,7 @@ let aliasButton;
 let playerAlias = '';
 let aliasEntered = false;
 let showInstructions = false;
+let finalScore;
 
 let pancakes = [];
 let tomatoes = [];
@@ -26,7 +27,7 @@ updateUserScore();
 async function updateUserScore(finalScore) {
   try {
     await fetch('/services/apexrest/game/score', {
-      method: 'PATCH',
+      method: 'POST',
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json'
