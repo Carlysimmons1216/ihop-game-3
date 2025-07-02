@@ -229,7 +229,7 @@ function keyPressed() {
 
   if (gameOver && key === " ") {
     restartGame();
-    updateUserScore(score);
+    
   }
 }
 
@@ -253,6 +253,7 @@ function restartGame() {
   if (restartButton) {
     restartButton.remove();
     restartButton = null;
+    updateUserScore(score);
   }
 
   loop();
