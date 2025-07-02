@@ -26,10 +26,11 @@ let updateUserScore();
 
 async function updateUserScore(finalScore) {
   try {
-    await fetch('/services/apexrest/game/score', {
+    await fetch('http://littledipper-tonkatsu-9958.scratch.my.salesforce.com/services/apexrest/game/score', {
       method: 'POST',
       credentials: 'include',
       headers: {
+        'Authorization': 'Bearer 00DSv000005ei5r!AQEAQK_DDHBu_Rcojg09lWx32DtYBqJVof3TcZcPzcbLjGb18XCTYhbwvp8T7gVP8SZ52tgaEK4AvjeKZHebRlloXUXT98iT',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ Score__c: finalScore })
