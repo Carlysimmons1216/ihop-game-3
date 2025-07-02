@@ -25,12 +25,13 @@ let dog = {
 //updateUserScore();
 
 async function updateUserScore(finalScore) {
-  try {
+  console.log('insideUpdate');
+    try {
     await fetch('http://littledipper-tonkatsu-9958.scratch.my.salesforce.com/services/apexrest/game/score', {
       method: 'POST',
       credentials: 'include',
       headers: {
-        'Authorization': 'Bearer 00DSv000005ei5r!AQEAQOPIjWnei82xWI2_1ARorcPkldczl.CdS_KgL3OnjbjBQHon.QakKRtzhHQnYtCfjrImyZgnivS7K2Wjucbp9BwsUO3e',
+        'Authorization': 'Bearer 00DSv000005ei5r!AQEAQOBKzZ33eE2cxk0cU9xecRhOt3gqV7_LW71m21XHeQ3PD_RCYFz8fU1IpQpsSjm.NmpIjiSu7U_FBJnmm1q_s.LXALtw',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ Score__c: finalScore })
@@ -255,7 +256,12 @@ function restartGame() {
   if (restartButton) {
     restartButton.remove();
     restartButton = null;
-    updateUserScore(score);
+    
+    //before beginning
+    console.log('beforeinsideUpdate')
+    updateUserScore(score)
+    console.log('afterinsideUpdate')
+    
   }
 
   loop();
