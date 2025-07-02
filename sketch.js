@@ -27,7 +27,7 @@ let dog = {
 async function updateUserScore(finalScore) {
   console.log('insideUpdate');
     try {
-    await fetch('http://littledipper-tonkatsu-9958.scratch.my.salesforce.com/services/apexrest/game/score', {
+    await fetch('https://littledipper-tonkatsu-9958.scratch.my.salesforce.com/services/apexrest/game/score', {
       method: 'POST',
       credentials: 'include',
       headers: {
