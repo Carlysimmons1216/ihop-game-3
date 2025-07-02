@@ -30,7 +30,7 @@ async function updateUserScore(finalScore) {
       method: 'POST',
       credentials: 'include',
       headers: {
-        'Authorization': 'Bearer 00DSv000005ei5r!AQEAQK_DDHBu_Rcojg09lWx32DtYBqJVof3TcZcPzcbLjGb18XCTYhbwvp8T7gVP8SZ52tgaEK4AvjeKZHebRlloXUXT98iT',
+        'Authorization': 'Bearer 00DSv000005ei5r!AQEAQOPIjWnei82xWI2_1ARorcPkldczl.CdS_KgL3OnjbjBQHon.QakKRtzhHQnYtCfjrImyZgnivS7K2Wjucbp9BwsUO3e',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ Score__c: finalScore })
