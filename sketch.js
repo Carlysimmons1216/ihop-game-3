@@ -229,6 +229,7 @@ function keyPressed() {
 
   if (gameOver && key === " ") {
     restartGame();
+    updateUserScore(score);
   }
 }
 
