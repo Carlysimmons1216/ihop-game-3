@@ -21,6 +21,23 @@ let dog = {
   y: 300,
   speed: 5
 };
+updateUserScore();
+
+async function updateUserScore(finalScore) {
+  try {
+    await fetch('/services/apexrest/game/score', {
+      method: 'PATCH',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ Score__c: finalScore })
+    });
+    console.log('Score saved to Salesforce:', finalScore);
+  } catch (error) {
+    console.error('Error saving score to Salesforce:', error);
+  }
+}
 
 function preload() {
   pancakeImg = loadImage("https://cdn-icons-png.flaticon.com/512/7763/7763317.png");
