@@ -257,7 +257,7 @@ function restartGame() {
     
     //before beginning
     console.log('beforeinsideUpdate')
-    submitScore(score, alias)
+    submitScore(score, playerAlias)
     console.log('afterinsideUpdate')
     
   }
