@@ -30,7 +30,7 @@ async function submitScore(finalScore, playerAlias) {
     await fetch('https://https://20a8a495-7674-4345-b546-a42700ea381c-00-e3ugnjehnav4.worf.replit.dev/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ alias: playerAlias, score: finalScore })
+      body: JSON.stringify({ alias: playerAlias, Score_c: finalScore })
     });
     console.log('Score saved!');
   } catch (err) {
@@ -231,7 +231,7 @@ function keyPressed() {
     
   }
 
-  submitScore(score, playerAlias);
+  submitScore(Score_c, playerAlias);
 }
 
 function restartGame() {
