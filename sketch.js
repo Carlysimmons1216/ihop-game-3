@@ -231,7 +231,7 @@ function keyPressed() {
     
   }
 
-  submitScore(Score_c, playerAlias);
+  submitScore(score, playerAlias);
 }
 
 function restartGame() {
