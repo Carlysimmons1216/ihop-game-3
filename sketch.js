@@ -27,7 +27,7 @@ let dog = {
 async function submitScore(finalScore, playerAlias) {
   console.log('sending score...');
   try {
-    await fetch('https://20a8a495-7674-4345-b546-a42700ea381c-00-e3ugnjehnav4.worf.replit.dev/submit-score', {
+    await fetch('https://023344d8-6faf-4043-a87e-35c1ccd1a9e9-00-3eg2ra5nb4m09.kirk.replit.dev/submit-score', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ alias: playerAlias, score: finalScore })
