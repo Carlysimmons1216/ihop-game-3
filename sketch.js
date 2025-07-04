@@ -24,19 +24,17 @@ let dog = {
 };
 //updateUserScore();
 
-async function updateUserScore(finalScore) {
-  console.log('insideUpdate');
-    try {
-    await fetch('https://023344d8-6faf-4043-a87e-35c1ccd1a9e9-00-3eg2ra5nb4m09.kirk.replit.dev/submit-score', {
+async function submitScore(finalScore, playerAlias) {
+  console.log('sending score...');
+  try {
+    await fetch('https://YOUR_REPLIT_URL/submit-score', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ Score__c: finalScore })
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ alias: playerAlias, score: finalScore })
     });
-    console.log('Score saved to Salesforce:', finalScore);
-  } catch (error) {
-    console.error('Error saving score to Salesforce:', error);
+    console.log('Score saved!');
+  } catch (err) {
+    console.error('Error saving score:', err);
   }
 }
 
@@ -232,6 +230,8 @@ function keyPressed() {
     restartGame();
     
   }
+
+  submitScore(score, playerAlias);
 }
 
 function restartGame() {
